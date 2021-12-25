@@ -258,7 +258,6 @@ Module.register("EXT-Links", {
     this.Response = configMerge({}, this.Response, tmp)
     var iframe = document.getElementById("EXT_LINKS")
     iframe.src= "about:blank"
-    iframe.classList.add
     logLinks("Reset Links", this.Response)
   },
 
