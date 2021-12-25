@@ -1,0 +1,14 @@
+#EXT_LINKS {
+  border: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  border: none;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+#EXT_LINKS.hidden {
+  display:none;
+}

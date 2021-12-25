@@ -1,0 +1,27 @@
+{
+  "name": "EXT-Links",
+  "version": "0.0.1",
+  "rev": "develop",
+  "description": "An embedded Links Displayer on MagicMirror.",
+  "main": "EXT-Links.js",
+  "scripts": {
+    "preinstall": "installer/preinstall.sh",
+    "postinstall": "installer/postinstall.sh"
+  },
+  "keywords": [
+    "magic mirror",
+    "module",
+    "notification",
+    "warning"
+  ],
+  "author": "bugsounet",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://forum.bugsounet.fr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bugsounet/EXT-Links"
+  },
+  "homepage": "http://wiki.bugsounet.fr/en/EXT-Links"
+}
