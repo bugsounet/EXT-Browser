@@ -1,4 +1,4 @@
-#EXT_LINKS {
+#EXT_BROWSER {
   border: none;
   position: fixed;
   width: 100%;
@@ -9,6 +9,6 @@
   z-index: 9999;
 }
 
-#EXT_LINKS.hidden {
+#EXT_BROWSER.hidden {
   display:none;
 }
