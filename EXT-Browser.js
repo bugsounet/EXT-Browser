@@ -153,6 +153,7 @@ Module.register("EXT-Browser", {
       message: this.translate("BrowserOpen"),
       type: "information"
     })
+    this.sendNotification("EXT_BROWSER-CONNECTED")
     clearTimeout(this.timerBrowser)
     this.timerBrowser = null
     this.hideModules()
@@ -164,6 +165,7 @@ Module.register("EXT-Browser", {
       message: this.translate("BrowserClose"),
       type: "information"
     })
+    this.sendNotification("EXT_BROWSER-DISCONNECTED")
     this.hideBrowser()
     this.resetBrowser()
     this.showModules()
