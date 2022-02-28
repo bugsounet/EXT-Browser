@@ -57,7 +57,7 @@ Module.register("EXT-Browser", {
         this.preparePopup()
         this.sendSocketNotification("INIT")
         break
-      case "EXT_GATEWAY":
+      case "GA_READY":
         this.sendNotification("EXT_HELLO", this.name)
         break
       case "EXT_BROWSER-OPEN":
