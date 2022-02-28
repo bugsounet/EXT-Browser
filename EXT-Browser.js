@@ -9,7 +9,7 @@ logBrowser = (...args) => { /* do nothing */ }
 
 Module.register("EXT-Browser", {
   defaults: {
-    debug: true,
+    debug: false,
     displayDelay: 60 * 1000,
     scrollActivate: false,
     scrollStep: 25,
@@ -56,6 +56,8 @@ Module.register("EXT-Browser", {
       case "DOM_OBJECTS_CREATED":
         this.preparePopup()
         this.sendSocketNotification("INIT")
+        break
+      case "EXT_GATEWAY":
         this.sendNotification("EXT_HELLO", this.name)
         break
       case "EXT_BROWSER-OPEN":
@@ -76,7 +78,6 @@ Module.register("EXT-Browser", {
       case "EXT_BROWSER-CLOSE":
         if (this.browser.running) this.endBrowser(true)
         break
-       
     }
   },
 
@@ -143,9 +144,11 @@ Module.register("EXT-Browser", {
         setTimeout(scrollDown(0), ${this.config.scrollStart});
       };`)
     })
-    this.timerBrowser = setTimeout(() => {
-      this.endBrowser(true)
-    }, this.config.displayDelay)
+    if (this.config.displayDelay) {
+      this.timerBrowser = setTimeout(() => {
+        this.endBrowser(true)
+      }, this.config.displayDelay)
+    }
   },
 
   startBrowser: function() {
