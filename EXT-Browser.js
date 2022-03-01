@@ -51,14 +51,14 @@ Module.register("EXT-Browser", {
     }
   },
 
-  notificationReceived: function(noti, payload) {
+  notificationReceived: function(noti, payload, sender) {
     switch(noti) {
       case "DOM_OBJECTS_CREATED":
         this.preparePopup()
         this.sendSocketNotification("INIT")
         break
       case "GA_READY":
-        this.sendNotification("EXT_HELLO", this.name)
+        if (sender.name == "MMM-GoogleAssistant") this.sendNotification("EXT_HELLO", this.name)
         break
       case "EXT_BROWSER-OPEN":
         if (!payload) return
