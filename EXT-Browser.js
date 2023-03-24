@@ -19,6 +19,7 @@ Module.register("EXT-Browser", {
 
   start: function () {
     if (this.config.debug) logBrowser = (...args) => { console.log("[BROWSER]", ...args) }
+    this.ready = false
     this.BrowserDisplay = new BrowserDisplay(this)
   },
 
@@ -55,15 +56,16 @@ Module.register("EXT-Browser", {
 
   notificationReceived: function(noti, payload, sender) {
     switch(noti) {
-      case "DOM_OBJECTS_CREATED":
-        this.BrowserDisplay.preparePopup()
-        this.sendSocketNotification("INIT")
-        break
-      case "GAv5_READY":
-        if (sender.name == "MMM-GoogleAssistant") this.sendNotification("EXT_HELLO", this.name)
+      case "GW_READY":
+        if (sender.name == "Gateway") {
+          this.sendSocketNotification("INIT")
+          this.BrowserDisplay.preparePopup()
+          this.sendNotification("EXT_HELLO", this.name)
+          this.ready = true
+        }
         break
       case "EXT_BROWSER-OPEN":
-        if (!payload) return
+        if (!payload || !this.ready) return
         if (payload.startsWith("http://") || payload.startsWith("https://")) {
           this.BrowserDisplay.browser.url= payload
           this.BrowserDisplay.displayBrowser()
