@@ -7,7 +7,7 @@ module.exports = NodeHelper.create({
   socketNotificationReceived: function (noti, payload) {
     switch (noti) {
       case "INIT":
-        console.log("[LINKS] EXT-Browser Version:", require('./package.json').version, "rev:", require('./package.json').rev)
+        console.log("[BROWSER] EXT-Browser Version:", require('./package.json').version, "rev:", require('./package.json').rev)
       break
     }
   }

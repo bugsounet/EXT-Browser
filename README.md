@@ -1,10 +1,8 @@
-# EXT-Browser - Extented for `MMM-GoogleAssistant` v5.x
-
-EXT-Browser is a module for the [MagicMirror](https://github.com/MichMich/MagicMirror) project by [Michael Teeuw](https://github.com/MichMich).<br>
+# EXT-Browser - Extented for `MMM-GoogleAssistant`
 
 It allows to display URL in fullscreen for `MagicMirror`
 
-This module is an Extented for `MMM-GoogleAssistant` v5.x, you can naturally use it as a simple module !<br>
+This module is an Extented for `MMM-GoogleAssistant`<br>
 It can be controled with notifications or with your voice
 
 ## Installation / update / configuration
