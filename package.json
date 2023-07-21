@@ -1,7 +1,7 @@
 {
   "name": "EXT-Browser",
-  "version": "1.2.0",
-  "rev": "230324",
+  "version": "1.2.1",
+  "rev": "230721",
   "description": "An embedded Browser on MagicMirror.",
   "main": "EXT-Browser.js",
   "scripts": {
@@ -27,8 +27,7 @@
   },
   "homepage": "https://wiki.bugsounet.fr/en/EXT-Browser",
   "dependencies": {
-    "check-node-version": "^4.2.1",
-    "glob": "^9.2.1",
-    "minify": "^9.2.0"
+    "esbuild": "^0.18.15",
+    "glob": "^10.3.3"
   }
 }
