@@ -50,7 +50,8 @@ Module.register("EXT-Browser", {
       es: "translations/es.json",
       nl: "translations/nl.json",
       pt: "translations/pt.json",
-      ko: "translations/ko.json"
+      ko: "translations/ko.json",
+      tr: "translations/tr.json"
     }
   },
 

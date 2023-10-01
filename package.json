@@ -1,12 +1,12 @@
 {
   "name": "EXT-Browser",
-  "version": "1.2.2",
-  "rev": "230724",
+  "version": "1.2.3",
+  "rev": "231001",
   "description": "An embedded Browser on MagicMirror.",
   "main": "EXT-Browser.js",
   "scripts": {
     "preinstall": "installer/preinstall.sh",
-    "postinstall": "installer/postinstall.sh -m",
+    "postinstall": "installer/postinstall.sh -m -b",
     "update": "installer/update.sh",
     "reset": "git reset --hard",
     "clean": "rm -rf node_modules package-lock.json"
@@ -27,7 +27,7 @@
   },
   "homepage": "https://wiki.bugsounet.fr/en/EXT-Browser",
   "dependencies": {
-    "esbuild": "^0.18.16",
-    "glob": "^10.3.3"
+    "esbuild": "^0.19.3",
+    "glob": "^10.3.6"
   }
 }
