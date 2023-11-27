@@ -27,7 +27,7 @@
   },
   "homepage": "https://wiki.bugsounet.fr/en/EXT-Browser",
   "dependencies": {
-    "esbuild": "^0.19.6",
+    "esbuild": "^0.19.8",
     "glob": "^10.3.10"
   }
 }
