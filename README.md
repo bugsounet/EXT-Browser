@@ -1,6 +1,6 @@
 # EXT-Browser - Extented for `MMM-GoogleAssistant`
 
-It allows to display URL in fullscreen for `MagicMirror`
+It allows to display URLs in fullscreen for `MagicMirror²`
 
 This module is an Extented for `MMM-GoogleAssistant`<br>
 It can be controled with notifications or with your voice
