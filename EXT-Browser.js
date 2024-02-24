@@ -5,7 +5,7 @@
  ** support: https://forum.bugsounet.fr
  **/
 
-logBrowser = (...args) => { /* do nothing */ }
+logBrowser = (...args) => { /* do nothing */ };
 
 Module.register("EXT-Browser", {
   defaults: {
@@ -17,31 +17,31 @@ Module.register("EXT-Browser", {
     scrollStart: 5000
   },
 
-  start: function () {
-    if (this.config.debug) logBrowser = (...args) => { console.log("[BROWSER]", ...args) }
-    this.ready = false
-    this.BrowserDisplay = new BrowserDisplay(this)
+  start () {
+    if (this.config.debug) logBrowser = (...args) => { console.log("[BROWSER]", ...args); };
+    this.ready = false;
+    this.BrowserDisplay = new BrowserDisplay(this);
   },
 
-  getDom: function() {
-    var dom = document.createElement("div")
-    dom.style.display = 'none'
-    return dom
+  getDom () {
+    var dom = document.createElement("div");
+    dom.style.display = "none";
+    return dom;
   },
 
-  getStyles: function () {
+  getStyles () {
     return [
       "EXT-Browser.css"
-    ]
+    ];
   },
 
-  getScripts: function() {
+  getScripts () {
     return [
       "/modules/EXT-Browser/components/BrowserDisplay.js"
-    ]
+    ];
   },
 
-  getTranslations: function() {
+  getTranslations () {
     return {
       en: "translations/en.json",
       fr: "translations/fr.json",
@@ -52,35 +52,35 @@ Module.register("EXT-Browser", {
       pt: "translations/pt.json",
       ko: "translations/ko.json",
       tr: "translations/tr.json"
-    }
+    };
   },
 
-  notificationReceived: function(noti, payload, sender) {
+  notificationReceived (noti, payload, sender) {
     switch(noti) {
       case "GA_READY":
-        if (sender.name == "MMM-GoogleAssistant") {
-          this.sendSocketNotification("INIT")
-          this.BrowserDisplay.preparePopup()
-          this.sendNotification("EXT_HELLO", this.name)
-          this.ready = true
+        if (sender.name === "MMM-GoogleAssistant") {
+          this.sendSocketNotification("INIT");
+          this.BrowserDisplay.preparePopup();
+          this.sendNotification("EXT_HELLO", this.name);
+          this.ready = true;
         }
-        break
+        break;
       case "EXT_BROWSER-OPEN":
-        if (!payload || !this.ready) return
+        if (!payload || !this.ready) return;
         if (payload.startsWith("http://") || payload.startsWith("https://")) {
-          this.BrowserDisplay.browser.url= payload
-          this.BrowserDisplay.displayBrowser()
+          this.BrowserDisplay.browser.url= payload;
+          this.BrowserDisplay.displayBrowser();
         } else {
           this.sendNotification("EXT_ALERT", {
             message: this.translate("BrowserError"),
             type: "error"
-          })
+          });
         }
-        break
+        break;
       case "EXT_STOP":
       case "EXT_BROWSER-CLOSE":
-        if (this.BrowserDisplay.browser.running) this.BrowserDisplay.endBrowser(true)
-        break
+        if (this.BrowserDisplay.browser.running) this.BrowserDisplay.endBrowser(true);
+        break;
     }
   }
-})
+});
