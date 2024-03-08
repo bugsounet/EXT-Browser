@@ -1,7 +1,7 @@
 {
   "name": "EXT-Browser",
-  "version": "1.4.0",
-  "rev": "240224",
+  "version": "1.4.1",
+  "rev": "240303",
   "description": "An embedded Browser on MagicMirror.",
   "main": "EXT-Browser.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "test:minify": "cd installer && node minify.js"
   },
   "keywords": [
+    "MMM-GoogleAssistant",
     "magic mirror",
     "module",
     "browser"
@@ -36,7 +37,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
-    "@stylistic/eslint-plugin": "^1.6.2",
+    "@stylistic/eslint-plugin": "^1.6.3",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1"
   }
