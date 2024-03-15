@@ -125,13 +125,13 @@ class BrowserDisplay {
 
   hideModules () {
     MM.getModules().enumerate((module)=> {
-      module.hide(100, { lockString: "EXT_LOCKED" });
+      module.hide(100, () => {}, { lockString: "EXT_LOCKED" });
     });
   }
 
   showModules () {
     MM.getModules().enumerate((module)=> {
-      module.show(100, { lockString: "EXT_LOCKED" });
+      module.show(100, () => {}, { lockString: "EXT_LOCKED" });
     });
   }
 }
