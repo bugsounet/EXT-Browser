@@ -1,7 +1,7 @@
 {
   "name": "EXT-Browser",
-  "version": "1.4.1",
-  "rev": "240303",
+  "version": "1.4.2",
+  "rev": "240316",
   "description": "An embedded Browser on MagicMirror.",
   "main": "EXT-Browser.js",
   "scripts": {
