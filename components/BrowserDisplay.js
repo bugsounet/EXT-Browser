@@ -1,13 +1,13 @@
 class BrowserDisplay {
-  constructor (that) {
+  constructor (config, Tools) {
     this.browser = {
       url: null,
       running: false
     };
     this.timerBrowser = null;
-    this.sendNotification = (...args) => { that.sendNotification(...args); };
-    this.translate = (...args) => { return that.translate(...args);};
-    this.config = that.config;
+    this.sendNotification = (...args) => { Tools.sendNotification(...args); };
+    this.translate = (...args) => { return Tools.translate(...args); };
+    this.config = config;
     console.log("[BROWSER] BrowserDisplay Ready");
   }
 
@@ -125,13 +125,13 @@ class BrowserDisplay {
 
   hideModules () {
     MM.getModules().enumerate((module)=> {
-      module.hide(100, { lockString: "EXT_LOCKED" });
+      module.hide(100, () => {}, { lockString: "EXT_LOCKED" });
     });
   }
 
   showModules () {
     MM.getModules().enumerate((module)=> {
-      module.show(100, { lockString: "EXT_LOCKED" });
+      module.show(100, () => {}, { lockString: "EXT_LOCKED" });
     });
   }
 }
