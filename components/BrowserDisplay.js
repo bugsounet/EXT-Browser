@@ -6,7 +6,7 @@ class BrowserDisplay {
     };
     this.timerBrowser = null;
     this.sendNotification = (...args) => { Tools.sendNotification(...args); };
-    this.translate = (...args) => { Tools.translate(...args); };
+    this.translate = (...args) => { return Tools.translate(...args); };
     this.config = config;
     console.log("[BROWSER] BrowserDisplay Ready");
   }
