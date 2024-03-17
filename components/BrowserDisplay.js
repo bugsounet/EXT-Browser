@@ -1,13 +1,13 @@
 class BrowserDisplay {
-  constructor (that) {
+  constructor (config, Tools) {
     this.browser = {
       url: null,
       running: false
     };
     this.timerBrowser = null;
-    this.sendNotification = (...args) => { that.sendNotification(...args); };
-    this.translate = (...args) => { return that.translate(...args);};
-    this.config = that.config;
+    this.sendNotification = (...args) => { Tools.sendNotification(...args); };
+    this.translate = (...args) => { Tools.translate(...args); };
+    this.config = config;
     console.log("[BROWSER] BrowserDisplay Ready");
   }
 

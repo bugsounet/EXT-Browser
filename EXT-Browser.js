@@ -20,7 +20,11 @@ Module.register("EXT-Browser", {
   start () {
     if (this.config.debug) logBrowser = (...args) => { console.log("[BROWSER]", ...args); };
     this.ready = false;
-    this.BrowserDisplay = new BrowserDisplay(this);
+    const Tools = {
+      sendNotification: (...args) => this.sendNotification(...args),
+      translate: (...args) => this.translate(...args)
+    };
+    this.BrowserDisplay = new BrowserDisplay(this.config, Tools);
   },
 
   getDom () {
