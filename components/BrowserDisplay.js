@@ -25,13 +25,15 @@ class BrowserDisplay {
     webView.src= this.browser.url;
     this.startBrowser();
 
-    webView.addEventListener("did-fail-load", () => {
-      console.log("[BROWSER] Loading error");
+    webView.addEventListener("did-fail-load", (e) => {
+      console.log("[BROWSER] Loading error",e);
+      /*
       this.sendNotification("EXT_ALERT", {
         message: this.translate("BrowserError"),
         type: "error"
       });
       this.endBrowser();
+      */
     });
     webView.addEventListener("crashed", (event) => {
       console.log("[BROWSER] J'ai tout pété mon général !!!");
