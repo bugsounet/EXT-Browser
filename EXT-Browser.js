@@ -71,6 +71,10 @@ Module.register("EXT-Browser", {
         break;
       case "EXT_BROWSER-OPEN":
         if (!payload || !this.ready) return;
+        if (typeof(payload) !== "string") {
+          console.error("[BROWSER] EXT_BROWSER-OPEN Error: payload must be a string, received:", payload);
+          return;
+        }
         if (payload.startsWith("http://") || payload.startsWith("https://")) {
           this.BrowserDisplay.browser.url= payload;
           this.BrowserDisplay.displayBrowser();
