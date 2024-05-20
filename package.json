@@ -1,7 +1,7 @@
 {
   "name": "EXT-Browser",
-  "version": "1.4.2",
-  "rev": "240317",
+  "version": "1.4.3",
+  "rev": "240519",
   "description": "An embedded Browser on MagicMirror.",
   "main": "EXT-Browser.js",
   "scripts": {
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
-    "@stylistic/eslint-plugin": "^2.1.0",
+    "@stylistic/eslint-plugin": "^1.8.0",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1"
   }
