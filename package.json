@@ -1,7 +1,7 @@
 {
   "name": "EXT-Browser",
-  "version": "1.4.3",
-  "rev": "240519",
+  "version": "1.5.0",
+  "rev": "240701",
   "description": "An embedded Browser on MagicMirror.",
   "main": "EXT-Browser.js",
   "scripts": {
@@ -24,13 +24,16 @@
   "author": "bugsounet",
   "license": "MIT",
   "bugs": {
-    "url": "https://forum.bugsounet.fr"
+    "url": "https://github.com/bugsounet/EXT-Browser/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/bugsounet/EXT-Browser"
   },
   "homepage": "https://wiki.bugsounet.fr/en/EXT-Browser",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "esbuild": "^0.21.5",
     "glob": "^10.4.2"
