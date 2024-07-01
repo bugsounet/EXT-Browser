@@ -1,12 +1,12 @@
 {
   "name": "EXT-Browser",
-  "version": "1.4.3",
-  "rev": "240519",
+  "version": "1.5.0",
+  "rev": "240701",
   "description": "An embedded Browser on MagicMirror.",
   "main": "EXT-Browser.js",
   "scripts": {
     "preinstall": "installer/preinstall.sh",
-    "postinstall": "installer/postinstall.sh -m -b",
+    "postinstall": "installer/postinstall.sh -m",
     "update": "installer/update.sh",
     "reset": "git reset --hard",
     "clean": "rm -rf node_modules package-lock.json",
@@ -24,20 +24,23 @@
   "author": "bugsounet",
   "license": "MIT",
   "bugs": {
-    "url": "https://forum.bugsounet.fr"
+    "url": "https://github.com/bugsounet/EXT-Browser/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/bugsounet/EXT-Browser"
   },
   "homepage": "https://wiki.bugsounet.fr/en/EXT-Browser",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "esbuild": "^0.21.3",
-    "glob": "^10.3.15"
+    "esbuild": "^0.22.0",
+    "glob": "^10.4.2"
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
-    "@stylistic/eslint-plugin": "^1.8.0",
+    "@stylistic/eslint-plugin": "^1.8.1",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1"
   }
