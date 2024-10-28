@@ -1,8 +1,8 @@
 /**
  ** Module : EXT-Browser
  ** @bugsounet
- ** ©03-2023
- ** support: https://forum.bugsounet.fr
+ ** ©10-2024
+ ** support: https://www.bugsounet.fr
  **/
 
 logBrowser = (...args) => { /* do nothing */ };
