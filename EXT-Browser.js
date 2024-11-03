@@ -79,7 +79,7 @@ Module.register("EXT-Browser", {
           this.BrowserDisplay.browser.url= payload;
           this.BrowserDisplay.displayBrowser();
         } else {
-          this.sendNotification("EXT_ALERT", {
+          this.sendNotification("GA_ALERT", {
             message: this.translate("BrowserError"),
             type: "error"
           });
