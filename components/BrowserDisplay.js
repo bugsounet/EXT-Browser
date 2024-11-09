@@ -28,7 +28,7 @@ class BrowserDisplay {
     webView.addEventListener("did-fail-load", (e) => {
       console.log("[BROWSER] Loading error",e);
       /*
-      this.sendNotification("EXT_ALERT", {
+      this.sendNotification("GA_ALERT", {
         message: this.translate("BrowserError"),
         type: "error"
       });
@@ -38,7 +38,7 @@ class BrowserDisplay {
     webView.addEventListener("crashed", (event) => {
       console.log("[BROWSER] J'ai tout pété mon général !!!");
       console.log("[BROWSER]", event);
-      this.sendNotification("EXT_ALERT", {
+      this.sendNotification("GA_ALERT", {
         message: this.translate("BrowserCrash"),
         type: "error"
       });
@@ -80,7 +80,7 @@ class BrowserDisplay {
   }
 
   startBrowser () {
-    if (!this.browser.running) this.sendNotification("EXT_ALERT", {
+    if (!this.browser.running) this.sendNotification("GA_ALERT", {
       message: this.translate("BrowserOpen"),
       type: "information"
     });
@@ -92,7 +92,7 @@ class BrowserDisplay {
   }
 
   endBrowser (extAlert=false) {
-    if (extAlert) this.sendNotification("EXT_ALERT", {
+    if (extAlert) this.sendNotification("GA_ALERT", {
       message: this.translate("BrowserClose"),
       type: "information"
     });
