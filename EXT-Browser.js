@@ -5,7 +5,9 @@
  ** support: https://www.bugsounet.fr
  **/
 
-logBrowser = (...args) => { /* do nothing */ };
+/* global BrowserDisplay */
+/* eslint-disable-next-line */
+var logBrowser = () => { /* do nothing */ };
 
 Module.register("EXT-Browser", {
   defaults: {
@@ -34,15 +36,11 @@ Module.register("EXT-Browser", {
   },
 
   getStyles () {
-    return [
-      "EXT-Browser.css"
-    ];
+    return ["EXT-Browser.css"];
   },
 
   getScripts () {
-    return [
-      "/modules/EXT-Browser/components/BrowserDisplay.js"
-    ];
+    return ["/modules/EXT-Browser/components/BrowserDisplay.js"];
   },
 
   getTranslations () {
@@ -60,7 +58,7 @@ Module.register("EXT-Browser", {
   },
 
   notificationReceived (noti, payload, sender) {
-    switch(noti) {
+    switch (noti) {
       case "GA_READY":
         if (sender.name === "MMM-GoogleAssistant") {
           this.sendSocketNotification("INIT");
@@ -71,12 +69,12 @@ Module.register("EXT-Browser", {
         break;
       case "EXT_BROWSER-OPEN":
         if (!payload || !this.ready) return;
-        if (typeof(payload) !== "string") {
+        if (typeof (payload) !== "string") {
           console.error("[BROWSER] EXT_BROWSER-OPEN Error: payload must be a string, received:", payload);
           return;
         }
         if (payload.startsWith("http://") || payload.startsWith("https://")) {
-          this.BrowserDisplay.browser.url= payload;
+          this.BrowserDisplay.browser.url = payload;
           this.BrowserDisplay.displayBrowser();
         } else {
           this.sendNotification("GA_ALERT", {
