@@ -1,3 +1,5 @@
+/* global logBrowser */
+/* eslint-disable-next-line */
 class BrowserDisplay {
   constructor (config, Tools) {
     this.browser = {
@@ -14,7 +16,7 @@ class BrowserDisplay {
   preparePopup () {
     var Browser = document.createElement("webview");
     Browser.id = "EXT_BROWSER";
-    Browser.scrolling="no";
+    Browser.scrolling = "no";
     Browser.classList.add("hidden");
     document.body.appendChild(Browser);
   }
@@ -22,11 +24,12 @@ class BrowserDisplay {
   displayBrowser () {
     logBrowser("Loading", this.browser.url);
     var webView = document.getElementById("EXT_BROWSER");
-    webView.src= this.browser.url;
+    webView.src = this.browser.url;
     this.startBrowser();
 
     webView.addEventListener("did-fail-load", (e) => {
-      console.log("[BROWSER] Loading error",e);
+      console.log("[BROWSER] Loading error", e);
+
       /*
       this.sendNotification("GA_ALERT", {
         message: this.translate("BrowserError"),
@@ -91,7 +94,7 @@ class BrowserDisplay {
     this.showBrowser();
   }
 
-  endBrowser (extAlert=false) {
+  endBrowser (extAlert = false) {
     if (extAlert) this.sendNotification("GA_ALERT", {
       message: this.translate("BrowserClose"),
       type: "information"
@@ -110,7 +113,7 @@ class BrowserDisplay {
       running: false
     };
     var iframe = document.getElementById("EXT_BROWSER");
-    iframe.src= "about:blank";
+    iframe.src = "about:blank";
   }
 
   showBrowser () {
@@ -126,13 +129,13 @@ class BrowserDisplay {
   }
 
   hideModules () {
-    MM.getModules().enumerate((module)=> {
+    MM.getModules().enumerate((module) => {
       module.hide(100, () => {}, { lockString: "EXT_LOCKED" });
     });
   }
 
   showModules () {
-    MM.getModules().enumerate((module)=> {
+    MM.getModules().enumerate((module) => {
       module.show(100, () => {}, { lockString: "EXT_LOCKED" });
     });
   }
